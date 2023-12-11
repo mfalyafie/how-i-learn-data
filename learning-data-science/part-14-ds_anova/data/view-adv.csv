@@ -1,0 +1,15 @@
+﻿day,time,view
+weekday,day,1000
+weekday,night,100
+weekday,day,1000
+weekend,night,1000
+weekday,night,100
+weekend,day,1000
+weekday,night,1500
+weekend,day,100
+weekend,night,100
+weekend,night,1500
+weekend,night,1500
+weekday,day,1500
+weekday,night,1500
+weekday,night,1500

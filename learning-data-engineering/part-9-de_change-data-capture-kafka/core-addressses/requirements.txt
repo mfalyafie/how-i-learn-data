@@ -1,0 +1,6 @@
+kafka-python
+pandas
+mypy
+python-dotenv
+sqlalchemy
+psycopg2
