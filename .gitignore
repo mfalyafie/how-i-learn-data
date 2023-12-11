@@ -1,5 +1,6 @@
 # Personal
 .gitignore
+*.code-workspace
 
 # DS Store
 .DS_Store
