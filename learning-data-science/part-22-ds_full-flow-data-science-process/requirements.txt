@@ -1,0 +1,4 @@
+sklearn
+sastrawi
+nltk
+pandas
