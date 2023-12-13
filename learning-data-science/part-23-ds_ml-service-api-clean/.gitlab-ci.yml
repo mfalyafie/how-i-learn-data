@@ -1,0 +1,48 @@
+variables:
+  DOCKER_VARIABLES: overlay2
+
+stages:
+  - check
+  - build
+  - production
+
+image: docker:latest
+
+services:
+  - docker:19.03.13-dind
+
+check:
+  image: python:3.6
+  stage: check
+  services:
+    - docker:19.03.13-dind
+  script:
+    - pip install -r requirements.txt
+    - mypy main.py
+
+build:
+  image: docker:stable
+  stage: build
+  services:
+    - docker:19.03.13-dind
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+    - apk update
+    - apk add make
+    - make build
+
+push:
+  image: docker:stable
+  stage: production
+  services:
+    - docker:19.03.13-dind
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+    - apk update
+    - apk add make
+    - make build
+    - make push
+  when: manual
+
+
+

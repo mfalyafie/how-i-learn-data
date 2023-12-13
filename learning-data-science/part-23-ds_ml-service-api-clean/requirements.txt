@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pandas
+python-multipart
+mypy
+sklearn
+prometheus-fastapi-instrumentator
+xgboost
